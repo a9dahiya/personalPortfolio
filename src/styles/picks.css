@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
+
+.picks-section {
+  padding: 4rem 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow-x: hidden; 
+}
+
+.picks-header {
+  font-family: 'Bitcount Grid Double', sans-serif;
+  font-size: clamp(1.8rem, 7vw, 3.5rem);
+  color: #a5b4fc;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  word-wrap: break-word;
+  display: block;
+  width: 100%;
+}
+
+.picks-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.picks-tabs button {
+  background: #0d1117;
+  border: 1px solid #1f2937;
+  color: #64748b;
+  padding: 10px 15px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.picks-tabs button.active {
+  color: #fff;
+  border-color: #60a5fa;
+  background: rgba(96, 165, 250, 0.1);
+}
+
+.picks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.pick-card {
+  background: #0d1117;
+  border: 1px solid #1f2937;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.pick-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.pick-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pick-info {
+  margin-top: 1rem;
+  min-width: 0;
+}
+
+.pick-info h3 {
+  font-family: 'Bitcount Grid Double', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  white-space: normal; 
+}
+
+.pick-sub {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.glitch-element {
+  position: relative;
+  display: inline; 
+  white-space: normal;
+}
+
+.glitch-element::before,
+.glitch-element::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  visibility: visible;
+}
+
+/* Red / Pink Layer */
+.glitch-element::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip: rect(44px, 9999px, 56px, 0);
+  animation: jitter-1 3s infinite linear alternate-reverse;
+}
+
+/* Cyan Layer */
+.glitch-element::after {
+  left: -2px;
+  text-shadow: 2px 0 #00fff9;
+  clip: rect(0, 9999px, 10px, 0);
+  animation: jitter-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes jitter-1 {
+  0% { clip: rect(10px, 9999px, 15px, 0); }
+  5% { clip: rect(30px, 9999px, 35px, 0); }
+  10% { clip: rect(0, 0, 0, 0); }
+  100% { clip: rect(0, 0, 0, 0); }
+}
+
+@keyframes jitter-2 {
+  0%, 80% { clip: rect(0, 0, 0, 0); }
+  85% { clip: rect(20px, 9999px, 25px, 0); }
+  90% { clip: rect(0, 0, 0, 0); }
+}
+
+@media (max-width: 768px) {
+  .picks-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .picks-header {
+    font-size: 1.8rem;
+  }
+
+  .glitch-element::before, .glitch-element::after {
+    display: none; 
+  }
+}

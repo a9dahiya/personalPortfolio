@@ -1,14 +1,11 @@
-/* src/styles/stars.css */
-
 .star-container {
   position: fixed;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-  z-index: 0; /* Behind everything */
+  z-index: 0;
 }
 
-/* The core star object */
 .star-layer {
   position: absolute;
   background: transparent;
@@ -16,22 +13,17 @@
   left: 0;
 }
 
-/* To make the infinite scroll seamless with box-shadows, 
-  we create a pseudo-element (::after) that is an exact copy 
-  of the stars and sits directly below the main set.
-*/
 .star-layer::after {
   content: " ";
   position: absolute;
-  top: 2000px; /* Must match the random generator range in JS */
+  top: 2000px;
   left: 0;
   width: inherit;
   height: inherit;
   opacity: inherit;
-  box-shadow: inherit; /* Copies the massive shadow string from the parent */
+  box-shadow: inherit;
 }
 
-/* Animation Speeds */
 .slow {
   animation: animStar 150s linear infinite;
 }
@@ -49,6 +41,6 @@
     transform: translateY(0px);
   }
   to {
-    transform: translateY(-2000px); /* Move up by the height of the pattern */
+    transform: translateY(-2000px);
   }
 }

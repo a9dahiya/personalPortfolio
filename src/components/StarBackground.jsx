@@ -1,4 +1,3 @@
-// src/components/StarBackground.jsx
 import { useMemo } from "react";
 import "../styles/stars.css";
 
@@ -21,7 +20,7 @@ const StarLayer = ({ count, size, speed, opacity }) => {
         width: size,
         height: size,
         opacity: opacity,
-        boxShadow: boxShadowStyle, // Applying the stars here
+        boxShadow: boxShadowStyle,
       }}
     />
   );
