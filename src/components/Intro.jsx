@@ -35,7 +35,7 @@
         <div className="intro-text-wrapper">
           <h1 className="intro-name" data-text="Akhilesh Dahiya">Akhilesh Dahiya</h1>
           <div className="intro-desc">
-            <p>Computational Mathematics & Statistics @ University of Waterloo</p>
+            <p>Combinatrics & Optimization @ University of Waterloo</p>
             <p>Turning ideas into code, one scalable system at a time</p>
             <p>Peaked Immortal in Valorant</p>
           </div>
