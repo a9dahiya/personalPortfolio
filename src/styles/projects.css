@@ -171,17 +171,94 @@
   25% { clip: rect(10px, 9999px, 12px, 0); transform: translateX(-2px); }
   100% { clip: rect(0,0,0,0); }
 }
-
 @media (max-width: 1000px) {
-  .terminal-frame { flex-direction: column; height: auto; max-height: none; }
-  .terminal-nav { width: 100%; height: 150px; border-right: none; border-bottom: 1px solid #1e293b; }
-  .view-main { flex-direction: column; gap: 1.5rem; }
-  .view-img-container { width: 100%; height: 200px; }
+  .projects-header {
+    width: 100%;
+    text-align: center;
+    /* Scale down slightly more for mobile to prevent viewport stretching */
+    font-size: clamp(1.5rem, 6vw, 2.5rem); 
+    /* Counter-balance the 4px letter-spacing on the right */
+    padding-left: 4px; 
+    /* Force word to break if a screen is exceptionally narrow */
+    overflow-wrap: break-word;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .terminal-frame { 
+    flex-direction: column; 
+    height: auto; 
+    max-height: none; 
+  }
+  
+  /* --- 1. HORIZONTAL PEEKING NAVIGATION --- */
+  .terminal-nav { 
+    width: 100%; 
+    height: auto; 
+    border-right: none; 
+    border-bottom: 1px solid #1e293b; 
+    
+    /* Convert to horizontal scroll */
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    
+    /* Smooth mobile scrolling */
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    
+    /* Hide scrollbar for cleaner look (optional but recommended) */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .terminal-nav::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .nav-row {
+    /* Set width to ~65% so the next item visually "peeks" in */
+    flex: 0 0 65%; 
+    scroll-snap-align: start;
+    
+    /* Move the active indicator to the bottom for horizontal layout */
+    border-left: none; 
+    border-bottom: 4px solid transparent; 
+    justify-content: center;
+  }
+
+  .nav-row.active {
+    background: rgba(96, 165, 250, 0.15);
+    border-left: none;
+    border-bottom: 4px solid #00fff9;
+  }
+  
+  /* --- 2. CENTERED CONTENT --- */
+  .view-main { 
+    flex-direction: column; 
+    gap: 1.5rem; 
+  }
+  
+  .view-img-container { 
+    width: 100%; 
+    height: 200px; 
+  }
   
   .view-info {
     padding: 0;
+    text-align: center; /* Centers the text */
   }
   
+  .view-stack {
+    justify-content: center; /* Centers the tech chips */
+  }
+  
+  .view-action {
+    display: block;
+    margin: 0 auto; /* Centers the button */
+  }
+  
+  /* Disable full glitch effects on mobile for performance */
   .glitch-element::before, .glitch-element::after {
       display: none; 
   }
@@ -189,10 +266,4 @@
   .glitch-element {
       animation: mobile-flicker 2s infinite;
   }
-}
-
-@keyframes mobile-flicker {
-    0%, 100% { opacity: 1; transform: skew(0); }
-    5%, 15% { opacity: 0.8; transform: skew(1deg); }
-    10% { opacity: 1; transform: translateX(-2px); }
 }

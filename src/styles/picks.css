@@ -140,17 +140,38 @@
   85% { clip: rect(20px, 9999px, 25px, 0); }
   90% { clip: rect(0, 0, 0, 0); }
 }
+@media (max-width: 1000px) {
+  /* --- FIX FOR MAIN HEADER CENTERING --- */
+  .picks-header {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Scale down a bit more for mobile to fit the 22-character string */
+    font-size: clamp(1.2rem, 5.5vw, 2rem); 
+    
+    /* Counter-balance the EXACT 2px letter-spacing from the base class */
+    padding-left: 2px; 
+    
+    /* Force word to break safely if a screen is exceptionally narrow */
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
 
-@media (max-width: 768px) {
   .picks-grid {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
   
-  .picks-header {
-    font-size: 1.8rem;
+  /* --- FIX: CENTER THE 5TH (ORPHAN) ELEMENT --- */
+  .pick-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1; /* Spans across both columns */
+    width: calc(50% - 0.5rem); /* Keeps it the exact same size as the other cards */
+    justify-self: center; /* Pushes it to the dead center of the bottom row */
   }
-
+  
+  /* Disable glitch effects on mobile to prevent layout shift & save performance */
   .glitch-element::before, .glitch-element::after {
     display: none; 
   }
