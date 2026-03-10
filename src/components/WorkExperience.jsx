@@ -8,8 +8,8 @@ const WorkExperience = () => {
       company: "Solinst Canada",
       date: "May 2025 - Dec 2025",
       description: [
-        "Frontend rebuild (React + TS + MUI)",
-        "UI test automation (Puppeteer → Playwright/Cypress)",
+        "Frontend rebuild ",
+        "UI test automation ",
         "CI/CD & Terraform setup"
       ]
     },
