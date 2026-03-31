@@ -2,7 +2,7 @@
 
 Personal portfolio showcasing me, my projects, and what I build.  
 
-Built with **React + TypeScript + Vite**  
+Built with **React + JS + Vite**  
 Deployed on **Vercel**
 
 🌐 [akhileshd.com](https://akhileshd.com)
