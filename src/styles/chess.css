@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
+
+.chess-section {
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.chess-header {
+  font-family: 'Bitcount Grid Double', sans-serif;
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  color: #a5b4fc;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+}
+
+.glitch-text::before {
+  left: 3px;
+  text-shadow: -2px 0 #ff00c1;
+  clip: rect(24px, 9999px, 90px, 0);
+  animation: chess-jitter-1 2.5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -3px;
+  text-shadow: 2px 0 #00fff9;
+  clip: rect(85px, 9999px, 140px, 0);
+  animation: chess-jitter-2 3s infinite linear alternate-reverse;
+}
+
+.chess-main-layout {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.chess-container {
+  flex: 0 1 500px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.chess-board-frame {
+  width: 100%;
+  border: 12px solid #0a0d12; 
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8), 0 8px 25px rgba(0, 0, 0, 0.5); 
+  border-radius: 4px;
+  display: flex; 
+  background-color: #0a0d12; 
+}
+
+.bot-avatar-container {
+  flex: 0 0 150px;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.stickman-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stickman-svg {
+  width: 100px;
+  height: 200px;
+}
+
+.bot-tag {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: #fff;
+  background: #ff00c1;
+  padding: 2px 6px;
+  text-transform: uppercase;
+}
+
+.terminal-status {
+  width: 100%;
+  max-width: 700px;
+  background: #0d1117;
+  border: 1px solid #1f2937;
+  border-left: 3px solid #60a5fa;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.status-text {
+  font-family: 'Courier New', monospace;
+  color: #00fff9;
+  font-size: 0.9rem;
+  margin: 0;
+  animation: blink 1s step-end infinite;
+}
+
+.reset-btn {
+  background: transparent;
+  border: none;
+  color: #ff00c1;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  transition: 0.2s;
+  align-self: flex-start;
+}
+
+.reset-btn:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #ff00c1;
+}
+
+@keyframes chess-jitter-1 {
+  0% { clip: rect(10px, 9999px, 15px, 0); }
+  5% { clip: rect(30px, 9999px, 35px, 0); }
+  10% { clip: rect(0, 0, 0, 0); }
+  100% { clip: rect(0, 0, 0, 0); }
+}
+
+@keyframes chess-jitter-2 {
+  0%, 80% { clip: rect(0, 0, 0, 0); }
+  85% { clip: rect(20px, 9999px, 25px, 0); }
+  90% { clip: rect(0, 0, 0, 0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@media (max-width: 800px) {
+  .chess-main-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .bot-avatar-container {
+    margin-top: 0;
+    order: -1;
+  }
+
+  .stickman-svg {
+    width: 500px;
+    height: 1000px;
+  }
+}
+
+@media (max-width: 600px) {
+  .chess-header {
+    font-size: clamp(1.2rem, 5.5vw, 2rem); 
+  }
+  .glitch-text::before, .glitch-text::after {
+    display: none; 
+  }
+}
