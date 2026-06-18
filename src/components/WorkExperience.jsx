@@ -5,8 +5,19 @@ const WorkExperience = () => {
     {
       id: 1,
       role: "Software Engineer",
+      company: "eXp Realty",
+      date: "May 2026 - Present",
+      description: [
+        "React/TS agent platform",
+        "Cost observability dashboard",
+        "ECS Fargate data pipeline"
+      ]
+    },
+    {
+      id: 2,
+      role: "Software Engineer",
       company: "Solinst Canada",
-      date: "May 2025 - Dec 2025",
+      date: "Sept. 2025 - Dec. 2025",
       description: [
         "Frontend rebuild ",
         "UI test automation ",
@@ -14,25 +25,24 @@ const WorkExperience = () => {
       ]
     },
     {
-      id: 2,
-      role: "Software Engineer",
-      company: "Fabricland",
-      date: "May 2024 - Aug 2024",
+      id: 3,
+      role: "Computer Engineer",
+      company: "Solinst Canada",
+      date: "May 2025 - Aug. 2025",
       description: [
-        "Python ERP automation",
-        "Portfolio website (React + Tailwind)",
-        "B2B partner portal integration"
+        "Embedded C++ firmware",
+        "SDI-12 & MODBUS handlers"
       ]
     },
     {
-      id: 3,
-      role: "Junior Developer",
-      company: "GetWorld Attire Trims Ltd.",
-      date: "Jun 2023 - Aug 2023",
+      id: 4,
+      role: "Software Engineer",
+      company: "Fabricland",
+      date: "May 2024 - Aug. 2024",
       description: [
-        "Qt app for QC digitization",
-        "C++/Qt data visualization",
-        "Optimized QC data tracking"
+        "B2B portal from scratch",
+        "React + Tailwind frontend",
+        "50+ retail partner onboarding"
       ]
     }
   ];

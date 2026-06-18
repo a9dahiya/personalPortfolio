@@ -4,50 +4,50 @@ import '../styles/projects.css';
 // Asset Imports
 import raiinetImg from '../assets/raiinet.jpg';
 import signImg from '../assets/sign.png';
-import chatbotImg from '../assets/chatbot.avif';
-import leetcodeImg from '../assets/leetcode.png';
-import twitterImg from '../assets/twitter.png';
+import evappImg from '../assets/evapp.png';
+import chessImg from '../assets/chess.png';
+import wineImg from '../assets/wine.png';
 
 const projectsData = [
-  { 
-    id: "PRJ_01", 
-    title: "RaiiNet", 
-    img: raiinetImg, 
-    desc: "Developed an 8x8 board game system in C++ featuring decoupled engine components (Player, GameState, Observer). Engineered core logic for abilities and event handling within a modular framework to deliver a cohesive simulation.",
-    tech: ["C++", "Makefile", "OOP"],
-    link: "https://github.com/a9dahiya/raiinet"
+  {
+    id: "PRJ_01",
+    title: "ChargePath",
+    img: evappImg,
+    desc: "Geospatial navigation platform for electric vehicles built with React Native and Go. Integrates Mapbox, self-hosted Valhalla, and OpenChargeMap to compute battery-aware paths and auto-reroute via charging stations when battery drops below 10%.",
+    tech: ["React Native", "Go", "Mapbox", "Docker"],
+    link: "https://github.com/a9dahiya/evapp"
   },
-  { 
-    id: "PRJ_02", 
-    title: "Sign Language Recognition", 
-    img: signImg, 
-    desc: "Built a real-time sign language detection system in Python using OpenCV and MediaPipe. Trained and deployed an LSTM model to classify gestures and overlay predictions on webcam feed.", 
+  {
+    id: "PRJ_02",
+    title: "Chess Engine",
+    img: chessImg,
+    desc: "C++ chess engine compiled to WebAssembly to run entirely in the browser — no server required. Implements bitboard representation, negamax search with alpha-beta pruning, quiescence search, and an opening book covering the King's Gambit and Caro-Kann.",
+    tech: ["C++", "WebAssembly", "Emscripten", "Chess.js"],
+    link: "https://github.com/a9dahiya/chess-engine"
+  },
+  {
+    id: "PRJ_03",
+    title: "Wine Stalker",
+    img: wineImg,
+    desc: "IoT wine cellar monitor using an ESP32 and DHT22 sensor. Streams temperature and humidity data to InfluxDB, visualized live in Grafana, with Twilio SMS alerts featuring debounce logic, severity classification, and cooldown periods to prevent notification spam.",
+    tech: ["Python", "ESP32", "Grafana", "Docker"],
+    link: "https://github.com/a9dahiya/wine-stalker"
+  },
+  {
+    id: "PRJ_04",
+    title: "Sign Language Recognition",
+    img: signImg,
+    desc: "Built a real-time sign language detection system in Python using OpenCV and MediaPipe. Trained and deployed an LSTM model to classify gestures and overlay predictions on webcam feed.",
     tech: ["Python", "OpenCV", "LSTM"],
     link: "https://github.com/a9dahiya/sign-language-detection"
   },
-  { 
-    id: "PRJ_03", 
-    title: "SQL Chatbot", 
-    img: chatbotImg, 
-    desc: "Built a chatbot in Rust using the OpenAI API to generate SQL queries from natural language prompts. Integrated user input handling to produce executable SQL code with real-time CLI output.", 
-    tech: ["Rust", "OpenAI", "CLI"],
-    link: "https://github.com/a9dahiya/sql-openai-chatbot"
-  },
-  { 
-    id: "PRJ_04", 
-    title: "Leetcode Demon Mode", 
-    img: leetcodeImg, 
-    desc: "Electron-based productivity lock. Forces kiosk mode and disables system-level shortcuts to ensure zero-distraction sessions. Lockdown duration configurable via main.js logic.", 
-    tech: ["Electron", "JavaScript", "Node.js"],
-    link: "https://github.com/a9dahiya/leetcode-demon-time"
-  },
-  { 
-    id: "PRJ_05", 
-    title: "Twitter Reply Bot", 
-    img: twitterImg, 
-    desc: "Automated engagement tool built with Node.js. Monitors specified search queries in real-time and executes automated replies using Twitter API protocols.", 
-    tech: ["Node.js", "Twitter API", "REST"],
-    link: "https://github.com/a9dahiya/twitter-bot"
+  {
+    id: "PRJ_05",
+    title: "RaiiNet",
+    img: raiinetImg,
+    desc: "Developed an 8x8 board game system in C++ featuring decoupled engine components (Player, GameState, Observer). Engineered core logic for abilities and event handling within a modular framework to deliver a cohesive simulation.",
+    tech: ["C++", "Makefile", "OOP"],
+    link: "https://github.com/a9dahiya/raiinet"
   },
 ];
 
